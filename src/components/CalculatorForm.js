@@ -10,7 +10,8 @@ function CalculatorForm() {
     console.log("Firm Submitted");
     setSum(x * 1 + y * 1);
   }
-
+  const [
+    cmd, setCMD] = useState(0);
   const [
     x, setX] = useState(0);
 
