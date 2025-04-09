@@ -1,14 +1,17 @@
 // import NameForm from './components/SimpleForm';
 
 import './App.css';
-import CalculatorForm from './components/CalculatorForm';
-import CalculatorFormWithRadio  from './components/CalculatorFormWithRadio';
 
+import CalculatorFormWithRadio  from './components/CalculatorFormWithRadio';
+import CalculatorFormWithSelect from './components/CalculatorFormWithSelect';
+import CalculatorFormWithCheckBox from './components/CalculatorFormWithCheckBox';
 function App() {
   return (
     <div className="App">
-      <CalculatorForm></CalculatorForm>
+       
 <CalculatorFormWithRadio></CalculatorFormWithRadio>
+<CalculatorFormWithSelect></CalculatorFormWithSelect>
+<CalculatorFormWithCheckBox></CalculatorFormWithCheckBox>
     </div>
   );
 }
