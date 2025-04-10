@@ -2,7 +2,11 @@ import React, { useState } from "react";
 function Weather() {
 
     const handleSearch = () => {
+        const appid = `4a1f8a61b74546825af1e0be106e797b`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}&units=metric`;
+
         console.log("clicked");
+        console.log(url);
     };
 
 
