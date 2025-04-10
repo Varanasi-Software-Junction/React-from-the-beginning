@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 function Weather() {
+
+    const handleSearch = () => {
+        console.log("clicked");
+    };
+
+
+
     const [city, setCity] = useState('Varanasi');
     return (
 
@@ -11,8 +18,11 @@ function Weather() {
                 onChange={(e) => setCity(e.target.value)
 
                 }
-            ></input>
-
+            ></input><br></br>
+            <button
+                type="button"
+                onClick={handleSearch}
+            >Get</button>
 
 
         </div>
