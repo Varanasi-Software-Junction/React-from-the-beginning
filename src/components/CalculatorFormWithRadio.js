@@ -1,6 +1,6 @@
 // NameForm.js
 import { useState } from "react";
-
+import '../components/styles/FormStyle.css';
 
 function CalculatorFormWithRadio() {
 
@@ -54,7 +54,8 @@ function CalculatorFormWithRadio() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <center>
+    <form className="topdiv" onSubmit={handleSubmit}>
       <h2>Result {sum}</h2>
       <label>N1 <input type="number" value={x} onChange={OneChange} ></input></label>
       <label>N2 <input type="number" value={y} onChange={TwoChange} ></input></label>
@@ -62,6 +63,7 @@ function CalculatorFormWithRadio() {
       <label>Sub <input name="calculate"  onChange={optionoChange}  type="radio" value="sub"  ></input></label>
       <button type="submit">Calculate</button>
     </form>
+    </center>
   );
 }
 export default CalculatorFormWithRadio;

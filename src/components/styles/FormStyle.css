@@ -1,0 +1,33 @@
+.topdiv {
+    background-color: teal;
+    width: fit-content;
+    box-shadow: 10px 10px 5px gray;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input[type="radio"] {
+    background-color: #04AA6D; /* Green */
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+button {
+    background-color: #04AA6D; /* Green */
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+button:hover {
+    box-shadow: 0px 0px 2px lightgreen;
+}
