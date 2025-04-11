@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 function Weather() {
 
     const handleSearch = () => {
@@ -7,6 +8,23 @@ function Weather() {
 
         console.log("clicked");
         console.log(url);
+//*************************************************************************** */
+
+axios.get(url).then((response) => {
+    console.log(response.data);
+}
+
+
+).catch((error)=>{
+console.log(error);
+
+
+});
+
+//************************************************************************************ */
+
+
+
     };
 
 
