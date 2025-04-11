@@ -1,6 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
 function Weather() {
+    const showWeather = () => {
+        console.log("Showing weather");
+        let saveddata=localStorage.getItem(city.toLowerCase().trim());
+        if(saveddata==null)
+        {
+            console.log("No dataa ");
+            return;
+        }
+        const wd=JSON.parse(saveddata);
+const outputdiv=document.getElementById("currentweather");
+outputdiv.innerHTML=wd["weather"][0]["description"];
+        console.log(saveddata);
+    }
+
 
     const handleSearch = () => {
         const appid = `4a1f8a61b74546825af1e0be106e797b`;
@@ -8,20 +22,22 @@ function Weather() {
 
         console.log("clicked");
         console.log(url);
-//*************************************************************************** */
+        //*************************************************************************** */
 
-axios.get(url).then((response) => {
-    console.log(response.data);
-}
-
-
-).catch((error)=>{
-console.log(error);
+        axios.get(url).then((response) => {
+            console.log(response.data);
+            localStorage.setItem(city.toLowerCase().trim(), JSON.stringify(response.data));
+            showWeather();
+        }
 
 
-});
+        ).catch((error) => {
+            console.log(error);
+            showWeather();
 
-//************************************************************************************ */
+        });
+
+        //************************************************************************************ */
 
 
 
@@ -45,7 +61,10 @@ console.log(error);
                 type="button"
                 onClick={handleSearch}
             >Get</button>
+<div id="currentweather">
 
+
+</div>
 
         </div>
     );
