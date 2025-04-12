@@ -3,15 +3,15 @@ import axios from "axios";
 function Weather() {
     const showWeather = () => {
         console.log("Showing weather");
-        let saveddata=localStorage.getItem(city.toLowerCase().trim());
-        if(saveddata==null)
-        {
+        let saveddata = localStorage.getItem(city.toLowerCase().trim());
+        if (saveddata == null) {
             console.log("No dataa ");
             return;
         }
-        const wd=JSON.parse(saveddata);
-const outputdiv=document.getElementById("currentweather");
-outputdiv.innerHTML=wd["weather"][0]["description"];
+        const wd = JSON.parse(saveddata);
+        const outputdiv = document.getElementById("currentweather");
+        outputdiv.innerHTML = wd["weather"][0]["description"];
+        document.title = `Weather for ${city}`;
         console.log(saveddata);
     }
 
@@ -61,10 +61,10 @@ outputdiv.innerHTML=wd["weather"][0]["description"];
                 type="button"
                 onClick={handleSearch}
             >Get</button>
-<div id="currentweather">
+            <div id="currentweather">
 
 
-</div>
+            </div>
 
         </div>
     );
