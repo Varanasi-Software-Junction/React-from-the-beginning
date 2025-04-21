@@ -1,4 +1,7 @@
+import { useLocation  } from "react-router-dom";
 function About() {
-    return <h1>Welcome to the About Page</h1>;
+  const{id}=useLocation ();
+  useLocation 
+    return <h1>Welcome to the About Page {id}</h1>;
   }
   export default About;
