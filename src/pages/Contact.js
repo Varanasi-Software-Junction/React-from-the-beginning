@@ -4,6 +4,7 @@ function Contact() {
     return<div> <h1>Welcome to the Contact Page</h1>
     
     <Link to="/about">About {id}</Link>
+    <Link to="/search">SearchPage</Link>
 <NavLink 
   to="/contact" 
   className={({ isActive }) => isActive ? "active" : ""}>
