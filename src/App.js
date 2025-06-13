@@ -1,24 +1,24 @@
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import UserProfile from './pages/UserProfile';
-import SearchPage from './pages/Search';
 
-import './App.css';
- 
+
+import React from 'react';
+import { useState } from 'react';
+
 function App() {
+  const [a, setA] = useState(0);
+  const [b, setB] = useState(0);
+  const [max, setMax] = useState(a > b);
   return (
-    <Router>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/search" element={<SearchPage />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/user/:id" element={<UserProfile />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-  </Router>
+    <div>
+      <center>
+        <h1>A: {a}</h1>
+        <h1>B: {b}</h1>
+        <h1>Max: {max ? a : b}</h1>
+        <button onClick={() => setA(a + 1)}>Increment A</button>
+        <button onClick={() => setB(b + 1)}>Increment B</button>
+        <button onClick={() => setMax(a > b)}>Update Max</button>
+      </center>
+    </div>
   );
 }
 
