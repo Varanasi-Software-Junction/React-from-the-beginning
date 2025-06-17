@@ -1,25 +1,19 @@
-
-
-
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   const [a, setA] = useState(0);
   const [b, setB] = useState(0);
   const [c, setC] = useState(0);
-  const [max, setMax] = useState((a >= b && a >= c) ? a : (b >= c) ? b : c);
+  const [max, setMax] = useState(0);
 
+  useEffect(() => {
+    const numA = Number(a);
+    const numB = Number(b);
+    const numC = Number(c);
+    const maxVal = Math.max(numA, numB, numC);
+    setMax(maxVal);
+  }, [a, b, c]);
 
-  const handleChangeA = (event) => {
-    setA(event.target.value);
-  };
-  const handleChangeB = (event) => {
-    setB(event.target.value);
-  };
-  const handleChangeC = (event) => {
-    setC(event.target.value);
-  };
   return (
     <div>
       <center>
@@ -27,14 +21,12 @@ function App() {
         <h1>B: {b}</h1>
         <h1>C: {c}</h1>
         <h1>Max: {max}</h1>
-        <input type="text" value={a} onChange={handleChangeA} />
-        <input type="text" value={b} onChange={handleChangeB} />
-        <input type="text" value={c} onChange={handleChangeC} />
-        <button onClick={() => setMax((a >= b && a >= c) ? a : (b >= c) ? b : c)}>Update Max</button>
+        <input type="number" value={a} onChange={(e) => setA(e.target.value)} />
+        <input type="number" value={b} onChange={(e) => setB(e.target.value)} />
+        <input type="number" value={c} onChange={(e) => setC(e.target.value)} />
       </center>
     </div>
   );
 }
-
 
 export default App;
