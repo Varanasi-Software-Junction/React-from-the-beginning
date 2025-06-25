@@ -1,17 +1,19 @@
- 
-import ButtonAddSub from './ButtonAddSub';
-import RadioButtonAddSub from './RadiuoButtonAddSub';
-import SelectAddSub from './SelectAddSub';
-import CheckBoxAddSub from './CheckBoxAddSub';
+import { Routes, Route, Link } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+
 function App() {
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-     <ButtonAddSub></ButtonAddSub>
-     <RadioButtonAddSub></RadioButtonAddSub>
-     <SelectAddSub></SelectAddSub>
-     <CheckBoxAddSub></CheckBoxAddSub>
+    <div>
+      <nav>
+        <Link to="/">Home</Link> | 
+        <Link to="/about">About</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }
-
-export default App;
