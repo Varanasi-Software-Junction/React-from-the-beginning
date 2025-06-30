@@ -1,14 +1,18 @@
 
+// Component for showing quiz questions, checking answers, and showing result
+
 import React, { useState } from 'react';
 import { QuizUtilities } from './utils';
 
 export default function QuizPage({ quizName, goBack }) {
-  const [, forceUpdate] = useState(0);
+  const [, forceUpdate] = useState(0);  // Dummy state to trigger re-renders
 
+  // Call this to force UI refresh after answer check
   function nextQuestion() {
     forceUpdate(n => n + 1);
   }
 
+  // If quiz is finished, show result screen
   if (QuizUtilities.quizCompleted) {
     return (
       <div>
@@ -24,8 +28,9 @@ export default function QuizPage({ quizName, goBack }) {
     );
   }
 
-  const q = QuizUtilities.getCurrentQuestion();
+  const q = QuizUtilities.getCurrentQuestion();  // Get current question
 
+  // Render current question and options
   return (
     <div>
       <h2>{quizName}</h2>
@@ -48,6 +53,7 @@ export default function QuizPage({ quizName, goBack }) {
         {q.opd}
       </button>
       <br />
+      {/* Show feedback like Correct/Wrong */}
       {QuizUtilities.feedback && (
         <p style={{ color: 'blue' }}>{QuizUtilities.feedback}</p>
       )}

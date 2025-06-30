@@ -1,4 +1,6 @@
 
+// App root component
+
 import React from 'react';
 import QuizList from './QuizList';
 
